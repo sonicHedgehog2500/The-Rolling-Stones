@@ -1,0 +1,414 @@
+html, body{
+	background-color: black;
+	font-family: calibri;
+	line-height: 30px;
+	color: white;
+	margin: auto;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+a, span, h1, h4{
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 2px;
+	font-weight: normal;
+	color: white;
+}
+
+#checkbox{
+	display: none;
+}
+
+img{
+	filter: grayscale(100%);
+}
+
+/*****Card Styling*****/
+.card{
+	display: flex;
+	flex-direction: column;
+}
+
+	.card img{
+		width: 100%;
+		height: 300px;
+	}
+
+	.card h1{
+		font-size: 1.5em;
+	}
+
+	.card span{
+		font-size: 1.1em;
+		margin: 5px 0px;
+	}
+
+	.card-achievement img, .card-tour img{
+		filter: grayscale(0%);
+	}
+	
+/*****Tabular Content Styling*****/
+.tab-content{
+	display: none;
+}
+
+	.tab-content p{
+		text-align: justify;
+		padding: 0px 5px;
+	}
+
+		.tab-content p span{
+			font-size: 1.5em;
+		}
+
+	.tab-content:target{
+		display: grid;
+	}
+
+/*****Header Styling*****/
+header{
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+	padding: 10px 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+	/*****Logo Styling*****/
+	header #logo{
+		max-width: 50px;
+		max-height: 50px;
+		width: auto;
+		height: auto;
+		border-radius: 50%;
+		margin: 0px 5px;
+		background-color: white;
+	}
+	
+	/*****Menu Styling*****/
+	header #menu-icon{
+		margin: 0px 5px;
+	}
+
+/*****Main Content Container Styling*****/
+main{
+	overflow: auto;
+	min-height: 100%;
+	display: block;
+	margin-top: 80px;
+}
+
+	/*****Banner Image Styling*****/
+	main #wallpaper{
+		width: 100%;
+		height: auto;
+	}
+
+	main .page-title{
+		font-size: 2em;
+	}
+	
+	main .container{
+		display: grid;
+		grid-gap: 10px;
+	}
+
+/*****Footer Styling*****/
+footer{
+	position: relative;
+	clear: both;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	padding: 10px 0px;
+}
+
+/**********************************************************************************************************************************Responsive Layout**********/
+
+/*******************************************************************************************************************Mobile Layout***************/
+@media only screen and (min-width: 320px){
+
+	/*****Card Styling*****/
+	.card{
+		text-align: center;
+		border-top: 0.5px solid white;
+	}
+
+	/*****Tabular Content Styling*****/
+	.tab-content:target{
+		grid-template-columns: repeat(1, auto);
+	}
+
+	.tab-content:target img{
+		width: 100%;
+	}
+
+	/*****Header Styling*****/
+
+		/*****Menu Styling*****/
+		header #menu{
+			position: fixed;
+			top: 0%;
+			left: -100%;
+			height: 100vh;
+			z-index: 1;
+			font-size: 1.3em;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			background-color: black;
+			transition: all .5s ease-in-out;
+		}
+
+			header #menu a{
+				display: block;
+				margin: 25px 0px;
+				padding: 5px 5px;
+				border-top: 0.5px solid lightgrey;
+			}
+
+			/*****Controls Container Styling*****/
+			header #menu .container-controls{
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+
+				header #menu .container-controls .controls{
+					margin: 10px 10px;
+				}
+
+			/*****Display Menu When The Icon Is Pressed*****/
+			#checkbox:checked ~ #menu{
+				left: 0%;
+			}
+
+	/*****Main Content Container Styling*****/
+	main .page-title{
+		text-align: center;
+	}
+
+	main .container{
+		grid-template-columns: repeat(1, auto);
+	}
+
+}
+
+/*******************************************************************************************************************Tablet Layout***************/
+@media only screen and (min-width: 768px){
+
+	/*****Card Styling*****/
+	.card{
+		text-align: center;
+		border-top: 0.5px solid white;
+	}
+
+	/*****Tabular Content Styling*****/
+	.tab-content:target{
+		grid-template-columns: repeat(1, auto);
+	}
+
+	.tab-content:target img{
+		width: 100%;
+	}
+
+	/*****Header Styling*****/
+
+		/*****Menu Styling*****/
+		header #menu{
+			position: fixed;
+			top: 0%;
+			left: -100%;
+			height: 100vh;
+			z-index: 1;
+			font-size: 1.3em;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			background-color: black;
+			transition: all .5s ease-in-out;
+		}
+
+			header #menu a{
+				display: block;
+				margin: 25px 0px;
+				padding: 5px 5px;
+				border-top: 0.5px solid lightgrey;
+			}
+
+			/*****Controls Container Styling*****/
+			header #menu .container-controls{
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+			}
+
+				header #menu .container-controls .controls{
+					margin: 10px 10px;
+				}
+
+			/*****Display Menu When The Icon Is Pressed*****/
+			#checkbox:checked ~ #menu{
+				left: 0%;
+			}
+
+	/*****Main Content Container Styling*****/
+	main .page-title{
+		text-align: center;
+	}
+
+		/*****Homepage Styling*****/
+		main #home-container{
+			grid-template-columns: repeat(1, auto);
+		}
+
+		/*****Biography Page Styling*****/
+		main #biography-container{
+			grid-template-columns: repeat(1, auto);
+		}
+
+		/*****Achievements Page Styling*****/
+		main #achievement-container{
+			grid-template-columns: repeat(2, auto);
+		}
+		
+			/*****Achievement Page Card Styling*****/
+			main #achievement-container .card-achievement{
+				border-top: none;
+				border-right: 0.5px solid white;
+			}
+
+		/*****Tour Page Styling*****/
+		main #tour-container{
+			grid-template-columns: repeat(1, auto);
+		}
+
+}
+
+/*******************************************************************************************Laptop, Desktop & Large Screen Layout***************/
+@media only screen and (min-width: 992px){
+
+	/*****Card Styling*****/
+	.card{
+		border-top: none;
+		border-right: 0.5px solid white;
+	}
+
+	/*****Tabular Content Styling*****/
+	.tab-content:target{
+		grid-template-columns: repeat(2, auto);
+		padding: 0px 5px;
+	}
+
+	/*****Header Styling*****/
+
+		/*****Menu Styling*****/
+		header #menu-icon{
+			display: none;
+		}
+
+		header #menu{
+			position: initial;
+			overflow: hidden;
+			width: auto;
+			height: auto;
+			margin: 0px 0px;
+			background-color: transparent;
+		}
+
+			header #menu a{
+				display: initial;
+				border: none;
+				transition: color 1s;
+			}
+
+				header #menu a:hover{
+					color: darkgrey;
+				}
+
+			/*****Controls Container Styling*****/
+			header #menu .container-controls{
+				display: none;
+			}
+
+	/*****Main Content Container Styling*****/
+	main .page-title{
+		text-align: left;
+		margin-left: 5px;
+	}
+
+		/*****Homepage Styling*****/
+		main #home-container{
+			grid-template-columns: repeat(3, auto);
+		}
+
+			/*****Homepage Card Styling*****/
+			main #home-container .card-page{
+				transition: background 1s;
+			}
+			
+				main #home-container .card-page:hover{
+					background: darkgrey;
+				}
+
+			/*****Biography Page Styling*****/
+			main #biography-container{
+				grid-template-columns: repeat(3, auto);
+			}
+
+				/*****Biography Card Styling*****/
+				main #biography-container .card-biography{
+					grid-row: 1 / span 1;
+					text-align: center;
+					transition: background 1s;
+				}
+
+					main #biography-container .card-biography:hover{
+						background-color: darkgrey;
+					}
+			
+				/*****Biography Tabular Content Styling*****/
+				main #biography-container .tab-content-biography{
+					grid-column: 1 / -1;
+					grid-row: 2;
+				}
+
+					/*****Biography Tabular Content Image Styling*****/
+					main #biography-container .tab-content-biography img{
+						height: 100%;
+					}
+
+			/*****Achievements Page Styling*****/
+			main #achievement-container{
+				grid-template-columns: repeat(3, auto);
+			}
+		
+				/*****Achievements Card Styling*****/
+				main #achievement-container .card-achievement{
+					transition: none;
+				}
+
+			/*****Tour Page Styling*****/
+			main #tour-container{
+				grid-template-columns: repeat(3, auto);
+			}
+
+	/*****Footer Styling*****/
+	
+		/*****Disclaimer Link Styling*****/
+		#disclaimer{
+			transition: color 1s, cursor 1s;
+		}
+		
+			#disclaimer:hover{
+				color: darkgrey;
+				cursor: pointer;
+			}
+
+}
